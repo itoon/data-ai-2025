@@ -43,9 +43,9 @@
 </template>
 
 <script setup lang="ts">
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, type Firestore } from "firebase/firestore";
 const nuxtApp = useNuxtApp();
-const db = nuxtApp.$db;
+const db = nuxtApp.$db as Firestore;
 
 import liff from "@line/liff";
 import result from "~/data/result.json";
@@ -70,24 +70,29 @@ setTimeout(() => {
 }, 1000);
 
 onMounted(async () => {
-  // liff.init({ liffId: "2006228745-Kv8mAomW" });
-  // liff.ready.then(() => {
-  //   if (liff.isLoggedIn()) {
-  //     liff.getProfile().then(async (profile) => {
-  //       profileState.value = profile;
-  //       try {
-  //         const docRef = await addDoc(collection(db, "users"), {
-  //           ...profile,
-  //           type: type,
-  //         });
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     });
-  //   } else {
-  //     liff.login();
-  //   }
-  // });
+  const config = useRuntimeConfig();
+  liff.init({ liffId: config.public.lineLiffId });
+  liff.ready.then(() => {
+    if (liff.isLoggedIn()) {
+      liff.getProfile().then(async (profile) => {
+        profileState.value = {
+          userId: profile.userId,
+          pictureUrl: profile.pictureUrl || "",
+          displayName: profile.displayName || "",
+        };
+        try {
+          const docRef = await addDoc(collection(db, "users"), {
+            ...profile,
+            type: type,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      });
+    } else {
+      liff.login();
+    }
+  });
 });
 
 const sendMessage = () => {

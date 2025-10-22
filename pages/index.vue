@@ -104,17 +104,22 @@ const characterAnswers = ref({
   C: 0,
 });
 onMounted(async () => {
-  // liff.init({ liffId: "2006228745-Kv8mAomW" });
-  // liff.ready.then(() => {
-  //   if (liff.isLoggedIn()) {
-  //     liff.getProfile().then(async (profile) => {
-  //       profileState.value = profile;
-  //     });
-  isLoading.value = false;
-  //   } else {
-  //     liff.login();
-  //   }
-  // });
+  const config = useRuntimeConfig();
+  liff.init({ liffId: config.public.lineLiffId });
+  liff.ready.then(() => {
+    if (liff.isLoggedIn()) {
+      liff.getProfile().then(async (profile) => {
+        profileState.value = {
+          userId: profile.userId,
+          pictureUrl: profile.pictureUrl || "",
+          displayName: profile.displayName || "",
+        };
+      });
+      isLoading.value = false;
+    } else {
+      liff.login();
+    }
+  });
 });
 
 const select = ref<{
