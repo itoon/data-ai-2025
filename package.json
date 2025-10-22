@@ -1,0 +1,30 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "test:unit": "vitest",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages --dotfiles -d .output/public"
+  },
+  "dependencies": {
+    "@line/liff": "^2.24.0",
+    "@nuxt/icon": "^1.4.5",
+    "@nuxt/image": "^1.7.0",
+    "@nuxt/kit": "3.13.0",
+    "@nuxt/schema": "3.13.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "firebase": "^10.13.1",
+    "nuxt": "^3.12.4",
+    "nuxt-gtag": "^3.0.1",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.1.14",
+    "gh-pages": "^6.1.1"
+  }
+}
