@@ -96,7 +96,8 @@ onMounted(async () => {
 });
 
 const sendMessage = () => {
-  const image = "https://itoon.github.io/ai-day/" + encodeURI(character.image);
+  const image =
+    "https://itoon.github.io/data-ai-2025/" + encodeURI(character.image);
   liff
     .sendMessages([
       {
