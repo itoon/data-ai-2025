@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const firebaseConfig = {
-    apiKey: process.env.apiKey,
-    authDomain: process.env.authDomain,
-    projectId: process.env.projectId,
-    storageBucket: process.env.storageBucket,
-    messagingSenderId: process.env.messagingSenderId,
-    appId: process.env.appId,
+    apiKey: "AIzaSyB_X4LcIBDshWj6XABeQOTUOFl4rZGysUI",
+    authDomain: "data-ai-day.firebaseapp.com",
+    projectId: "data-ai-day",
+    storageBucket: "data-ai-day.firebasestorage.app",
+    messagingSenderId: "975433419043",
+    appId: "1:975433419043:web:cafcb3aeb5833531366496",
   };
 
   const app = initializeApp(firebaseConfig);

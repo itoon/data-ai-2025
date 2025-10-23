@@ -71,7 +71,7 @@ setTimeout(() => {
 
 onMounted(async () => {
   const config = useRuntimeConfig();
-  liff.init({ liffId: config.public.lineLiffId });
+  liff.init({ liffId: "2008296196-401JNyOe" });
   liff.ready.then(() => {
     if (liff.isLoggedIn()) {
       liff.getProfile().then(async (profile) => {
@@ -96,8 +96,7 @@ onMounted(async () => {
 });
 
 const sendMessage = () => {
-  const image =
-    "https://itoon.github.io/game-changer/" + encodeURI(character.image);
+  const image = "https://itoon.github.io/ai-day/" + encodeURI(character.image);
   liff
     .sendMessages([
       {

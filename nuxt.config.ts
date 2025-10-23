@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   ssr: false,
   css: ["~/assets/css/main.css"],
   app: {
+    baseURL: "/ai-day/",
     buildAssetsDir: "assets",
     head: {
       title: "Data AI Day 2025",
@@ -18,7 +19,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          href: "favicon.ico",
+          href: "/ai-day/favicon.ico",
         },
       ],
     },
