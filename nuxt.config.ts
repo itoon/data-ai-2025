@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   ssr: false,
   css: ["~/assets/css/main.css"],
   app: {
-    baseURL: "/data-ai-2025/",
+    baseURL: "/data-ai-2025",
     buildAssetsDir: "assets",
     head: {
       title: "Data AI Day 2025",
