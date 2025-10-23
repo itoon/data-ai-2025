@@ -11,7 +11,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  background-image: url("/ai-day/BG-mobile.jpg");
+  background-image: url("/data-ai-2025/BG-mobile.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,6 +19,6 @@ html {
 
 @media (min-width: 768px) {
   html {
-    background-image: url("/ai-day/BG-desktop.jpg");
+    background-image: url("/data-ai-2025/BG-desktop.jpg");
   }
 }

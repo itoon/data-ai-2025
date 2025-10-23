@@ -5,7 +5,7 @@
     <div
       class="px-4 py-6 bg-white rounded-3xl min-h-[75vh] mb-28 md:py-20 md:px-20 md:min-h-0 md:mb-0"
     >
-      <NuxtImg src="/data-ai-logo.png" class="mx-auto w-60" />
+      <img src="/data-ai-logo.png" class="mx-auto w-60" />
       <img
         :src="profileState.pictureUrl"
         class="mx-auto mt-4 mb-4 w-24 rounded-full"
@@ -37,7 +37,7 @@
         <div
           class="flex flex-col gap-2 justify-center items-center mt-10 text-center"
         >
-          <NuxtImg src="/supporter.png" class="w-48" />
+          <img src="/supporter.png" class="w-48" />
         </div>
       </div>
     </div>
