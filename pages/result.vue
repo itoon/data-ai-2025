@@ -70,7 +70,6 @@ setTimeout(() => {
 }, 1000);
 
 onMounted(async () => {
-  const config = useRuntimeConfig();
   liff.init({ liffId: "2008296196-401JNyOe" });
   liff.ready.then(() => {
     if (liff.isLoggedIn()) {
